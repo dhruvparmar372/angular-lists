@@ -1,0 +1,39 @@
+{
+  "author": "Olivier Combe <olivier.combe@gmail.com>",
+  "name": "angular-brunch-seed",
+  "description": "AngularJS + Brunch + SASS",
+  "version": "0.0.1",
+  "homepage": "https://github.com/scoarescoare/angular-brunch-true-north",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/scoarescoare/angular-brunch-true-north"
+  },
+  "engines": {
+    "node": "~0.6.10 || ~0.8 || ~0.9 || ~0.10"
+  },
+  "scripts": {
+    "start": "node_modules/.bin/brunch watch --server",
+    "test": "node_modules/.bin/karma start test/testacular.conf.js"
+  },
+  "dependencies": {
+    "brunch": ">= 1.6",
+    "javascript-brunch": ">= 1.6",
+    "css-brunch": ">= 1.6",
+    "sass-brunch": ">= 1.6",
+    "auto-reload-brunch": "~1.6.3",
+    "uglify-js-brunch": ">= 1.6",
+    "clean-css-brunch": ">= 1.6",
+    "express": ">= 3.3.1",
+    "karma-ng-scenario": ">= 0.0.2",
+    "karma-chrome-launcher": "0.0.2",
+    "karma-firefox-launcher": "0.0.2",
+    "karma-junit-reporter": "0.0.1",
+    "karma-ie-launcher": "0.0.1",
+    "karma-safari-launcher": "0.0.2",
+    "karma-phantomjs-launcher": "0.0.2",
+    "karma-ios-launcher": "0.0.2"
+  },
+  "devDependencies": {
+    "karma": ">= 0.9.3"
+  }
+}
