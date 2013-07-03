@@ -67,5 +67,6 @@ build.xml
 _public
 node_modules/*
 npm-debug.log
+docs
 
 test/test-results.xml

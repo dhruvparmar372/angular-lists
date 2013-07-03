@@ -61,6 +61,12 @@ Notes:
 * `./scripts/test-e2e.sh` to run e2e tests with [karma](http://karma-runner.github.io) using angular's scenario runner (or `./scripts/test-e2e.bat` on Windows)
 * Be aware that changing the SASS files will compile the new CSS while the server is running, but that it won't trigger a e2e test reload, you'll have to manually relaunch the test server fow now
 
+### Generate documentation
+
+* Make sure that your _public folder is not in production mode (concatenated & without comments)
+* `./scripts/docco.sh` to run documentation generation using [docco](http://jashkenas.github.io/docco/) (or `./scripts/docco.bat` on Windows)
+* The documentation will be generated in the docs folder
+
 ### Common issues
 
 Initial load does not render correctly; scripts are not loading. 
