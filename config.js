@@ -59,11 +59,8 @@ exports.config = {
 			pretty: true // Adds pretty-indentation whitespaces to output (false by default)
 		}
 	},
-	// Enable or disable minifying of result js / css files.
-	minify: true,
 
 	server: {
-		path: 'jst-server.js',
-		run: true
+		path: 'jst-server.js'
 	}
 };
