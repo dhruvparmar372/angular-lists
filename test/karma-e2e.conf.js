@@ -16,9 +16,9 @@ module.exports = function(karma) {
 			'node_modules/karma-ng-scenario/lib/adapter.js',
 
 			// Application Code
-			'_public/js/modernizr.js',
-			'_public/js/vendor.js',
-			'_public/js/app.js',
+			'public/js/modernizr.js',
+			'public/js/vendor.js',
+			'public/js/app.js',
 
 			'test/e2e/**/*.js'
 		],
@@ -78,8 +78,6 @@ module.exports = function(karma) {
 			'karma-jasmine',
 			'karma-chrome-launcher',
 			'karma-firefox-launcher',
-			'karma-ie-launcher',
-			'karma-safari-launcher',
 			'karma-phantomjs-launcher',
 			'karma-ios-launcher',
 			'karma-junit-reporter',

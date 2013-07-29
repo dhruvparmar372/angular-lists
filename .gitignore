@@ -64,9 +64,10 @@ build.xml
 #############
 ## Project
 #############
-_public
+public
 node_modules/*
 npm-debug.log
 docs
+vendor
 
 test/test-results.xml

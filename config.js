@@ -5,49 +5,77 @@ exports.config = {
 		wrapper: false
 	},
 	paths: {
-		"public": '_public'
+		"public": 'public'
 	},
 	files: {
 		javascripts: {
 			joinTo: {
 				'js/app.js': /^app/,
 				'js/vendor.js': function(path) {
-					return path.indexOf("vendor") !== -1 && path.indexOf("modernizr") === -1;
+                    path = path.replace(/\\/g, '/');
+                    switch(path) {
+                        case 'vendor/scripts/brunch-JavaScriptCompiler-auto-reload.js': // auto reload script injected by brunch
+                        case 'vendor/console-polyfill/index.js':
+
+                        // jquery
+                        case 'vendor/jquery/jquery.js':
+
+                        // angular
+                        case 'vendor/angular/angular.js':
+                        case 'vendor/angular-resource/angular-resource.js':
+                        case 'vendor/angular-cookies/angular-cookies.js':
+                        case 'vendor/angular-ui-router/release/angular-ui-router.js':
+
+                        // bootstrap
+                        case 'vendor/bootstrap/dist/js/bootstrap.js':
+                            return true;
+                        default:
+                            return false;
+                    }
 				},
 				'js/modernizr.js': function(path) { // modernizr & respond
-					return path.indexOf('respond') !== -1 || path.indexOf("modernizr") !== -1;
-				},
+                    path = path.replace(/\\/g, '/');
+                    switch(path) {
+                        case 'vendor/respond/respond.src.js':
+                        case 'vendor/modernizr/modernizr.js':
+                            return true;
+                        default:
+                            return false;
+                    }
+                },
 				'test/scenarios.js': /^test(\/|\\)e2e/
 			},
 			order: {
 				before: [
-					'vendor/scripts/respond.js',
-					'vendor/scripts/console-helper.js',
-					'vendor/scripts/jquery.js',
-					'vendor/scripts/angular/angular.js',
-					'vendor/scripts/angular/angular-resource.js',
-					'vendor/scripts/angular/angular-cookies.js',
+                    'vendor/respond/respond.src.js',
+                    'vendor/console-polyfill/index.js',
 
-					// make sure bootstrap order is correct
-					'vendor/scripts/bootstrap/bootstrap-transition.js',
-					'vendor/scripts/bootstrap/bootstrap-alert.js',
-					'vendor/scripts/bootstrap/bootstrap-modal.js',
-					'vendor/scripts/bootstrap/bootstrap-dropdown.js',
-					'vendor/scripts/bootstrap/bootstrap-scrollspy.js',
-					'vendor/scripts/bootstrap/bootstrap-tab.js',
-					'vendor/scripts/bootstrap/bootstrap-tooltip.js',
-					'vendor/scripts/bootstrap/bootstrap-popover.js',
-					'vendor/scripts/bootstrap/bootstrap-button.js',
-					'vendor/scripts/bootstrap/bootstrap-collapse.js',
-					'vendor/scripts/bootstrap/bootstrap-carousel.js',
-					'vendor/scripts/bootstrap/bootstrap-typeahead.js',
-					'vendor/scripts/bootstrap/bootstrap-affix.js'
+                    // jquery
+                    'vendor/jquery/jquery.js',
+
+                    // angular
+                    'vendor/angular/angular.js',
+
+                    // bootstrap
+                    'vendor/bootstrap/dist/js/bootstrap.js'
 				]
 			}
 		},
 		stylesheets: {
 			joinTo: {
-				'css/app.css': /^(app|vendor)/
+				'css/app.css': function(path) {
+                    path = path.replace(/\\/g, '/');
+                    switch(path) {
+                        case 'vendor/bootstrap/dist/css/bootstrap.css':
+                        case 'vendor/bootstrap-glyphicons/css/bootstrap-glyphicons.css':
+                            return true;
+                        default:
+                            if(path.indexOf('app/') === 0) {
+                                return true;
+                            }
+                            return false;
+                    }
+                }
 			}
 		},
 		templates: {
@@ -55,12 +83,14 @@ exports.config = {
 		}
 	},
 	plugins: {
-		jade: {
-			pretty: true // Adds pretty-indentation whitespaces to output (false by default)
-		}
+
 	},
 
 	server: {
 		path: 'jst-server.js'
-	}
+	},
+
+    conventions: {
+        assets: /app(\\|\/)assets(\\|\/)/
+    }
 };

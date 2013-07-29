@@ -13,9 +13,9 @@ module.exports = function(karma) {
 		// list of files / patterns to load in the browser
 		files: [
 			// Application Code
-			'_public/js/modernizr.js',
-			'_public/js/vendor.js',
-			'_public/js/app.js',
+			'public/js/modernizr.js',
+			'public/js/vendor.js',
+			'public/js/app.js',
 
 			'test/vendor/angular/angular-mocks.js',
 
@@ -76,10 +76,8 @@ module.exports = function(karma) {
 			'karma-jasmine',
 			'karma-chrome-launcher',
 			'karma-firefox-launcher',
-			'karma-ie-launcher',
 			'karma-safari-launcher',
 			'karma-phantomjs-launcher',
-			'karma-ios-launcher',
 			'karma-junit-reporter',
 			'karma-ng-scenario'
 		]

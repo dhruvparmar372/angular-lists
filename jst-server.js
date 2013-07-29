@@ -19,13 +19,13 @@ module.exports = {
 			// Gzip content
 			app.use(express.compress());
 
-			app.use(express.static(__dirname + "/_public"));
+			app.use(express.static(__dirname + "/public"));
 
 			return app.use(express.methodOverride());
 		});
 
 		app.get('/', function(request, response) {
-			return response.sendfile('_public/index.html');
+			return response.sendfile('public/index.html');
 		});
 
 		return app.listen(process.env.PORT || 3333, function() {

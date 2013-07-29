@@ -1,7 +1,7 @@
 'use strict';
 
 /* Controllers*/
-angular.module('app.controllers', []).controller('AppCtrl', [
+App.controller('AppCtrl', [
 		'$scope', '$location', '$resource', '$rootScope', function($scope, $location, $resource, $rootScope) {
 			// Uses the url to determine if the selected
 			// menu item should have the class active.
@@ -26,18 +26,15 @@ angular.module('app.controllers', []).controller('AppCtrl', [
 			};
 		}
 	]).
-	controller('MyCtrl1', [
-		'$scope', function($scope) {
+	controller('MyCtrl1', ['$scope', function($scope) {
 			return $scope.onePlusOne = 2;
 		}
 	]).
-	controller('MyCtrl2', [
-		'$scope', function($scope) {
+	controller('MyCtrl2', ['$scope', function($scope) {
 			return $scope;
 		}
 	]).
-	controller('TodoCtrl', [
-		'$scope', function($scope) {
+	controller('TodoCtrl', ['$scope', function($scope) {
 			$scope.todos = [
 				{
 					text: "learn angular",

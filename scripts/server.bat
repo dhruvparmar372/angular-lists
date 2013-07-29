@@ -1,2 +1,2 @@
-rd /s /q _public
+rd /s /q public
 node_modules/.bin/brunch watch --server

@@ -1,6 +1,6 @@
 'use strict';
 describe("controllers", function() {
-	beforeEach(module("app.controllers"));
+	beforeEach(module("app"));
 	describe("MyCtrl1", function() {
 		return it("should make scope testable", inject(function($rootScope, $controller) {
 			var ctrl, scope;

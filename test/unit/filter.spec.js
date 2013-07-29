@@ -1,6 +1,6 @@
 'use strict';
 describe("filter", function() {
-	beforeEach(module("app.filters"));
+	beforeEach(module("app"));
 	return describe("interpolate", function() {
 		beforeEach(module(function($provide) {
 			$provide.value("version", "TEST_VER");

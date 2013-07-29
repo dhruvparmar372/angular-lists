@@ -22,7 +22,7 @@ Features:
 
 * `git clone https://github.com/ocombe/angular-brunch-seed-no-fuss` to clone the **angular-brunch-seed-no-fuss** repository
 * `cd angular-brunch-seed-no-fuss`
-* `./scripts/init.sh` to install node packages (or `./scripts/init.bat` on Windows).
+* `sh scripts/init.sh` to install node packages (or `./scripts/init.bat` on Windows).
 
 or if you have **Brunch** installed run:
 
@@ -30,7 +30,7 @@ or if you have **Brunch** installed run:
 
 ### Running the app during development
 
-* `./scripts/server.sh` to serve using **Brunch** (or `./scripts/server.bat` on Windows).
+* `sh scripts/server.sh` to serve using **Brunch** (or `./scripts/server.bat` on Windows).
 
 Then navigate your browser to [http://localhost:3333](http://localhost:3333)
 
@@ -41,13 +41,13 @@ The first compilation is always longer.
 
 ### Running the app in production
 
-* `./scripts/production.sh` to minify javascript and css files (or `./scripts/production.bat` on Windows).
+* `sh scripts/production.sh` to minify javascript and css files (or `./scripts/production.bat` on Windows).
 
 Please be aware of the caveats regarding Angular JS and minification, take a look at [Dependency Injection](http://docs.angularjs.org/guide/di) for information.
 
 ### Running unit tests
 
-* `./scripts/test.sh` to run unit tests with [karma](http://karma-runner.github.io) (or `./scripts/test.bat` on Windows)
+* `sh scripts/test.sh` to run unit tests with [karma](http://karma-runner.github.io) (or `./scripts/test.bat` on Windows)
 * Open the browser you would like to test to [http://localhost:3334](http://localhost:3334)
 
 Notes:

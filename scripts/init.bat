@@ -1,2 +1,3 @@
 rd /s /q node_modules
-npm install
+rd /s /q vendor
+npm install && %~dp0/../node_modules/.bin/bower install
