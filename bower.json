@@ -1,0 +1,23 @@
+{
+	"name": "angular-brunch-seed-no-fuss",
+	"version": "0.3.0",
+	"dependencies": {
+		"console-polyfill": "~0.1.0",
+		"respond": "~1.3.0",
+		"angular": "1.2.0-rc.2",
+		"angular-resource": "1.2.0-rc.2",
+		"angular-ui-router": "https://github.com/angular-ui/ui-router/archive/master.zip",
+		"jquery": "1.10.2",
+		"modernizr": "~2.6.2",
+		"angular-cookies": "1.2.0-rc.2",
+		"sass-boostrap3": "https://github.com/jlong/sass-bootstrap/archive/master.zip"
+	},
+	"overrides": {
+		"respond": {
+			"main": "respond.src.js"
+		},
+		"modernizr": {
+			"main": "modernizr.js"
+		}
+	}
+}

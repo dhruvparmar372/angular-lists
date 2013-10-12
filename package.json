@@ -1,42 +1,42 @@
 {
-  "author": "Olivier Combe <olivier.combe@gmail.com>",
-  "name": "angular-brunch-seed-no-fuss",
-  "description": "AngularJS + Brunch + SASS",
-  "version": "0.2.0",
-  "homepage": "https://github.com/ocombe/angular-brunch-seed-no-fuss",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/ocombe/angular-brunch-seed-no-fuss"
-  },
-  "engines": {
-    "node": "~0.6.10 || ~0.8 || ~0.9 || ~0.10"
-  },
-  "scripts": {
-    "start": "node_modules/.bin/brunch watch --server",
-    "test": "node_modules/.bin/karma start test/karma.conf.js"
-  },
-  "dependencies": {
-    "sass-brunch": "~1.6.1",
-    "javascript-brunch": "~1.6.0",
-    "karma-firefox-launcher": "0.0.2",
-    "karma-chrome-launcher": "0.0.2",
-    "karma-safari-launcher": "0.0.2",
-    "css-brunch": "~1.6.0",
-    "karma-ng-scenario": "0.0.2",
-    "karma-junit-reporter": "0.0.1",
-    "clean-css-brunch": "~1.6.0",
-    "brunch": "~1.7.0",
-    "docco": "~0.6.2",
-    "uglify-js-brunch": "~1.7.2",
-    "express": "~3.3.4",
-    "karma-phantomjs-launcher": "0.0.2",
-    "auto-reload-brunch": "~1.6.4",
-    "karma-html2js-preprocessor": "0.0.2",
-    "karma-script-launcher": "0.0.2",
-    "karma-requirejs": "0.0.3",
-    "karma-jasmine": "0.0.3",
-    "karma-coffee-preprocessor": "0.0.3",
-    "karma": "~0.9.6",
-    "bower": "~1.0.0"
-  }
+	"author": "Olivier Combe <olivier.combe@gmail.com>",
+	"name": "angular-brunch-seed-no-fuss",
+	"description": "AngularJS + Brunch + SASS",
+	"version": "0.3.0",
+	"homepage": "https://github.com/ocombe/angular-brunch-seed-no-fuss",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/ocombe/angular-brunch-seed-no-fuss"
+	},
+	"engines": {
+		"node": "~0.6.10 || ~0.8 || ~0.9 || ~0.10"
+	},
+	"scripts": {
+		"start": "node_modules/.bin/brunch watch --server",
+		"test": "node_modules/.bin/karma start test/karma.conf.js"
+	},
+	"dependencies": {
+		"sass-brunch": "~1.7.0",
+		"javascript-brunch": "~1.7.0",
+		"css-brunch": "~1.7.0",
+		"clean-css-brunch": "~1.7.1",
+		"uglify-js-brunch": "~1.7.2",
+		"auto-reload-brunch": "~1.7.0",
+		"brunch": "~1.7.8",
+		"docco": "~0.6.2",
+		"express": "~3.4.0",
+		"karma-ng-scenario": "~0.1.0",
+		"karma-junit-reporter": "~0.1.0",
+		"karma-firefox-launcher": "~0.1.0",
+		"karma-chrome-launcher": "0.1.0",
+		"karma-safari-launcher": "0.1.1",
+		"karma-phantomjs-launcher": "~0.1.0",
+		"karma-html2js-preprocessor": "~0.1.0",
+		"karma-script-launcher": "~0.1.0",
+		"karma-requirejs": "~0.1.0",
+		"karma-jasmine": "0.1.3",
+		"karma-coffee-preprocessor": "~0.1.0",
+		"karma": "~0.10.2",
+		"bower": "~1.2.7"
+	}
 }

@@ -1,7 +1,7 @@
 'use strict';
 
 // Declare app level module which depends on filters, and services
-var App = angular.module('app', ['ngCookies', 'ngResource', 'ui.state'])
+var App = angular.module('app', ['ngCookies', 'ngResource', 'ui.router'])
     .config(['$stateProvider', '$locationProvider', '$urlRouterProvider', function($stateProvider, $locationProvider, $urlRouterProvider) {
         $urlRouterProvider.otherwise("/todo");
 

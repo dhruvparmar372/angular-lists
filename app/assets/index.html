@@ -1,13 +1,19 @@
 <!DOCTYPE html>
-<!--[if lte IE 8]><script src="http://cdnjs.cloudflare.com/ajax/libs/json2/20110223/json2.js"></script><![endif]-->
+<!--[if lte IE 8]>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/json2/20110223/json2.js"></script><![endif]-->
 <!--[if lt IE 7]>
 <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en" ng-app="app">
-<script defer src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
-<script defer>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
+    <script defer src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
+    <script defer>window.attachEvent('onload', function() {
+        CFInstall.check({mode: 'overlay'})
+    })</script>
 <![endif]-->
-<!--[if IE 7]><html class="no-js lt-ie9 lt-ie8" lang="en" ng-app="app"><![endif]-->
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" ng-app="app"><![endif]-->
-<!--[if gt IE 8]><!--><html class="no-js" lang="en" ng-app="app"><!--<![endif]-->
+<!--[if IE 7]>
+<html class="no-js lt-ie9 lt-ie8" lang="en" ng-app="app"><![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9" lang="en" ng-app="app"><![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en" ng-app="app"><!--<![endif]-->
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -24,21 +30,19 @@
         </script>
     </head>
     <body ng-controller="AppCtrl">
+        <div ng-include="'/partials/nav.html'"></div>
+
         <div class="wrapper">
-            <div ng-include="'/partials/nav.html'"></div>
             <div class="container main-content">
                 <div ui-view="mainView"></div>
-                <div>Angular Brunch seed app: v<span app-version></span></div>
             </div>
             <div class="push"></div>
         </div>
+        <br/>
         <footer class="footer">
             <div class="container">
-                <p>
-                    <small>
-                        <a href="https://github.com/ocombe/angular-brunch-seed-no-fuss">Angular & brunch - No fuss | Source</a>
-                    </small>
-                </p>
+                <div>Angular Brunch seed app: v<span app-version></span></div>
+                <small><a href="https://github.com/ocombe/angular-brunch-seed-no-fuss">Angular & brunch - No fuss | Source</a></small>
             </div>
         </footer>
         <script src="/js/vendor.js"></script>

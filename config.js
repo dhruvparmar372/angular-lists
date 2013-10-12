@@ -5,7 +5,8 @@ exports.config = {
 		wrapper: false
 	},
 	paths: {
-		"public": 'public'
+		"public": 'public',
+		"watched": ['app', 'vendor', 'bower_components']
 	},
 	files: {
 		javascripts: {
@@ -14,20 +15,19 @@ exports.config = {
 				'js/vendor.js': function(path) {
                     path = path.replace(/\\/g, '/');
                     switch(path) {
-                        case 'vendor/scripts/brunch-JavaScriptCompiler-auto-reload.js': // auto reload script injected by brunch
-                        case 'vendor/console-polyfill/index.js':
+                        case 'bower_components/console-polyfill/index.js':
 
                         // jquery
-                        case 'vendor/jquery/jquery.js':
+                        case 'bower_components/jquery/jquery.js':
 
                         // angular
-                        case 'vendor/angular/angular.js':
-                        case 'vendor/angular-resource/angular-resource.js':
-                        case 'vendor/angular-cookies/angular-cookies.js':
-                        case 'vendor/angular-ui-router/release/angular-ui-router.js':
+                        case 'bower_components/angular/angular.js':
+                        case 'bower_components/angular-resource/angular-resource.js':
+                        case 'bower_components/angular-cookies/angular-cookies.js':
+                        case 'bower_components/angular-ui-router/release/angular-ui-router.js':
 
-                        // bootstrap
-                        case 'vendor/bootstrap/dist/js/bootstrap.js':
+	                    // bootstrap
+	                    case 'bower_components/sass-boostrap3/dist/js/bootstrap.js':
                             return true;
                         default:
                             return false;
@@ -36,8 +36,8 @@ exports.config = {
 				'js/modernizr.js': function(path) { // modernizr & respond
                     path = path.replace(/\\/g, '/');
                     switch(path) {
-                        case 'vendor/respond/respond.src.js':
-                        case 'vendor/modernizr/modernizr.js':
+                        case 'bower_components/respond/respond.src.js':
+                        case 'bower_components/modernizr/modernizr.js':
                             return true;
                         default:
                             return false;
@@ -47,43 +47,25 @@ exports.config = {
 			},
 			order: {
 				before: [
-                    'vendor/respond/respond.src.js',
-                    'vendor/console-polyfill/index.js',
+                    'bower_components/respond/respond.src.js',
+                    'bower_components/console-polyfill/index.js',
 
                     // jquery
-                    'vendor/jquery/jquery.js',
+                    'bower_components/jquery/jquery.js',
 
                     // angular
-                    'vendor/angular/angular.js',
+                    'bower_components/angular/angular.js',
 
                     // bootstrap
-                    'vendor/bootstrap/dist/js/bootstrap.js'
+                    'bower_components/bootstrap/dist/js/bootstrap.js'
 				]
 			}
 		},
 		stylesheets: {
 			joinTo: {
-				'css/app.css': function(path) {
-                    path = path.replace(/\\/g, '/');
-                    switch(path) {
-                        case 'vendor/bootstrap/dist/css/bootstrap.css':
-                        case 'vendor/bootstrap-glyphicons/css/bootstrap-glyphicons.css':
-                            return true;
-                        default:
-                            if(path.indexOf('app/') === 0) {
-                                return true;
-                            }
-                            return false;
-                    }
-                }
+				'css/app.css': /^app/
 			}
-		},
-		templates: {
-			joinTo: 'js/templates.js'
 		}
-	},
-	plugins: {
-
 	},
 
 	server: {
@@ -92,5 +74,7 @@ exports.config = {
 
     conventions: {
         assets: /app(\\|\/)assets(\\|\/)/
-    }
+    },
+
+	sourceMaps: true
 };
