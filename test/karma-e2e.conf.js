@@ -16,7 +16,6 @@ module.exports = function(karma) {
 			'node_modules/karma-ng-scenario/lib/adapter.js',
 
 			// Application Code
-			'public/js/modernizr.js',
 			'public/js/vendor.js',
 			'public/js/app.js',
 

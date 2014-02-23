@@ -5,16 +5,16 @@
 
 describe("my app", function() {
 	beforeEach(function() {
-		return browser().navigateTo("/");
+		return browser().navigateTo("/#!");
 	});
 
 	it("should automatically redirect to /todo when location hash/fragment is empty", function() {
 		return expect(browser().location().url()).toBe("/todo");
 	});
 
-	it("should navigate to /view1 when the View 1 link in nav is clicked", function() {
-		element('.nav a[href="#/view1"]').click();
-		return expect(browser().location().url()).toBe("/view1");
+	it("should navigate to /view when the View link in nav is clicked", function() {
+		element('.nav a[href="#/view"]').click();
+		return expect(browser().location().url()).toBe("/view");
 	});
 
 	describe("todo", function() {
@@ -23,7 +23,7 @@ describe("my app", function() {
 		});
 
 		it("should display checked items with a line-through", function() {
-			return expect(element("[ui-view] ul li input:checked + span").css("text-decoration")).toEqual("line-through");
+			return expect(element("[ui-view] ul li input:checked + span").css("text-decoration")).toEqual("line-through solid rgb(51, 51, 51)");
 		});
 
 		it("should sync done status with checkbox state", function() {
@@ -39,29 +39,20 @@ describe("my app", function() {
 		});
 
 		return it("should add a newly submitted item to the end of the list and empty the text input", function() {
-			var newItemLabel;
-			newItemLabel = "test newly added item";
+			var newItemLabel = "test newly added item";
 			input("todoText").enter(newItemLabel);
-			element("[ui-view] input[type=\"submit\"]").click();
+			element('[ui-view] button[type="submit"]').click();
 			expect(repeater("[ui-view] ul li").count()).toEqual(3);
 			expect(element("[ui-view] ul li:last span").text()).toEqual(newItemLabel);
 			return expect(input("todoText").val()).toEqual("");
 		});
 	});
-	describe("view1", function() {
+	describe("view", function() {
 		beforeEach(function() {
-			return browser().navigateTo("#/view1");
+			return browser().navigateTo("#!/view");
 		});
-		return it("should render view1 when user navigates to /view1", function() {
+		return it("should render view when user navigates to /view", function() {
 			return expect(element("[ui-view] p:first").text()).toMatch(/partial for view 1/);
-		});
-	});
-	return describe("view2", function() {
-		beforeEach(function() {
-			return browser().navigateTo("#/view2");
-		});
-		return it("should render view2 when user navigates to /view2", function() {
-			return expect(element("[ui-view] p:first").text()).toMatch(/partial for view 2/);
 		});
 	});
 });

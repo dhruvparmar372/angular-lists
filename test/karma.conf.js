@@ -13,11 +13,10 @@ module.exports = function(karma) {
 		// list of files / patterns to load in the browser
 		files: [
 			// Application Code
-			'public/js/modernizr.js',
 			'public/js/vendor.js',
 			'public/js/app.js',
 
-			'test/vendor/angular/angular-mocks.js',
+			'bower_components/angular-mocks/angular-mocks.js',
 
 			'test/unit/**/*.spec.js'
 		],

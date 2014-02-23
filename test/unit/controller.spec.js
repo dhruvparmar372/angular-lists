@@ -5,7 +5,7 @@ describe("controllers", function() {
 		return it("should make scope testable", inject(function($rootScope, $controller) {
 			var ctrl, scope;
 			scope = $rootScope.$new();
-			ctrl = $controller("MyCtrl1", {
+			ctrl = $controller("MyCtrl", {
 				$scope: scope
 			});
 			return expect(scope.onePlusOne).toEqual(2);
