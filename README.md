@@ -6,7 +6,6 @@
 Features:
 * Full JS & HTML (no Coffeescript, no Jade) / SASS / SCSS automatically compiled on save
 * ES5-Shim, Modernizr, and console polyfill (because IE8 is still alive)
-* [Compass-Twitter-Bootstrap](https://github.com/vwall/compass-twitter-bootstrap) integration
 * auto-reload during development saves you from manually refreshing the page and the css is automatically injected without refreshing the page
 * Javascript / CSS minification for production
 * [karma](http://karma-runner.github.io) integration for unit & e2e tests
