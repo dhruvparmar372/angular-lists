@@ -4,12 +4,12 @@
 [AngularJS](http://angularjs.org) + [Brunch](http://brunch.io)
 
 Features:
-* Full JS & HTML (no Coffeescript, no Jade) / SASS / SCSS automatically compiled on save
+* Full JS & HTML (no Coffeescript, no Jade) / SASS automatically compiled on save
 * ES5-Shim, Modernizr, and console polyfill (because IE8 is still alive)
 * auto-reload during development saves you from manually refreshing the page and the css is automatically injected without refreshing the page
 * Javascript / CSS minification for production
 * [karma](http://karma-runner.github.io) integration for unit & e2e tests
-* Bootstrap 3 integration with themes & font awesome.
+* Bootstrap 3
 
 ## Alternate Versions
 
@@ -32,11 +32,9 @@ or if you have **Brunch** installed run:
 * `sh scripts/server.sh` to serve using **Brunch** (or `./scripts/server.bat` on Windows).
 
 Then navigate your browser to [http://localhost:3333](http://localhost:3333)
+If you use your own server, you can use the development script :
 
-NOTE: Occasionally the scripts will not load properly on the initial
-load. If this occurs, refresh the page. Subsequent refresh will render
-correctly.
-The first compilation is always longer.
+* `sh scripts/development.sh` (or `./scripts/development.bat` on Windows).
 
 ### Running the app in production
 
@@ -61,9 +59,6 @@ Notes:
 * Be aware that changing the SASS files will compile the new CSS while the server is running, but that it won't trigger a e2e test reload, you'll have to manually relaunch the test server fow now
 
 ### Common issues
-
-Initial load does not render correctly; scripts are not loading. 
-- Occasionally the scripts will not load properly on the initial load. If this occurs, refresh the page. Subsequent refresh will render correctly.
 
 `EMFILE` error
 - EMFILE means there are too many open files. Brunch watches all your project files and it's usually a pretty big number. You can fix this error with setting max opened file count to bigger number with command ulimit -n <number> (10000 should be enough).

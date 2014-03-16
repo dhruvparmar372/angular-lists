@@ -4,3 +4,7 @@
 * Updated libs
 * Added ocModal & lodash
 * Removed ngCookies, added ngSanitize
+
+# 0.4.1
+* New version of angular, last one supporting IE8, new releases will only support IE9+
+* Node-sass has been updated and we can use the official twitter bootstrap sass port from now on

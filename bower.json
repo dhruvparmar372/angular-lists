@@ -1,6 +1,6 @@
 {
   "name": "angular-brunch-seed-no-fuss",
-  "version": "0.3.0",
+  "version": "0.4.1",
   "dependencies": {
     "console-polyfill": "~0.1.1",
     "respond": "~1.4.2",
