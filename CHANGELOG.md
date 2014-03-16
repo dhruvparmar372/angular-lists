@@ -1,4 +1,4 @@
-# 0.0.5
+# 0.0.5 (16 Mars 2014)
 * New version of angular, last one supporting IE8, new releases will only support IE9+
 * Node-sass has been updated and we can use the official twitter bootstrap sass port from now on
 
