@@ -16,7 +16,7 @@
     "test": "node_modules/.bin/karma start test/karma.conf.js"
   },
   "dependencies": {
-    "sass-brunch": "git://github.com/brunch/sass-brunch.git",
+    "sass-brunch": "~1.8.1",
     "javascript-brunch": "~1.7.1",
     "css-brunch": "~1.7.0",
     "clean-css-brunch": "~1.7.1",
