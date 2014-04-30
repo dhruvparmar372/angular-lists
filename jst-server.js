@@ -1,28 +1,30 @@
 module.exports = {
 	startServer: function() {
 		var express = require('express'),
-			app = express();
+			app = express(),
+			bodyParser = require('body-parser'),
+			compress = require('compression'),
+			errorHandler = require('errorhandler'),
+			morgan  = require('morgan'), // logger
+			methodOverride = require('method-override');
 
-		app.configure(function() {
+		app.use(errorHandler({
+			dumpExceptions: true,
+			showStack: true
+		}));
 
-			app.use(express.errorHandler({
-				dumpExceptions: true,
-				showStack: true
-			}));
+		app.use(morgan({
+			format: ':method :url'
+		}));
 
-			app.use(express.logger({
-				format: ':method :url'
-			}));
+		app.use(bodyParser());
 
-			app.use(express.bodyParser());
+		// Gzip content
+		app.use(compress());
 
-			// Gzip content
-			app.use(express.compress());
+		app.use(express.static(__dirname + "/public"));
 
-			app.use(express.static(__dirname + "/public"));
-
-			return app.use(express.methodOverride());
-		});
+		app.use(methodOverride());
 
 		app.get('/', function(request, response) {
 			return response.sendfile('public/index.html');

@@ -1,21 +1,27 @@
 {
   "author": "Olivier Combe <olivier.combe@gmail.com>",
   "name": "angular-brunch-seed-no-fuss",
-  "description": "AngularJS + Brunch + SASS",
-  "version": "0.4.1",
+  "description": "AngularJS + Brunch + SCSS",
+  "version": "0.5.0",
   "homepage": "https://github.com/ocombe/angular-brunch-seed-no-fuss",
   "repository": {
     "type": "git",
     "url": "https://github.com/ocombe/angular-brunch-seed-no-fuss"
   },
   "engines": {
-    "node": "~0.6.10 || ~0.8 || ~0.9 || ~0.10"
+    "node": "~0.8 || ~0.9 || ~0.10"
   },
   "scripts": {
-    "start": "node_modules/.bin/brunch watch --server",
-    "test": "node_modules/.bin/karma start test/karma.conf.js"
+    "install": "webdriver-manager update",
+    "postinstall": "bower install",
+    "start": "brunch watch --server",
+    "dev": "brunch watch",
+    "prod": "brunch build -P",
+    "test": "node ./node_modules/karma/bin/karma start test/karma.conf.js",
+    "test-e2e": "protractor test/protractor-conf.js"
   },
-  "dependencies": {
+  "dependencies": {},
+  "devDependencies": {
     "sass-brunch": "~1.8.1",
     "javascript-brunch": "~1.7.1",
     "css-brunch": "~1.7.0",
@@ -23,21 +29,25 @@
     "uglify-js-brunch": "~1.7.7",
     "auto-reload-brunch": "~1.7.3",
     "brunch": "~1.7.13",
-    "docco": "~0.6.3",
-    "express": "~3.4.8",
-    "karma-ng-scenario": "~0.1.0",
-    "karma-junit-reporter": "~0.2.1",
+    "express": "~4.1.1",
+    "karma-junit-reporter": "~0.2.2",
     "karma-firefox-launcher": "~0.1.3",
-    "karma-chrome-launcher": "0.1.2",
+    "karma-chrome-launcher": "0.1.3",
     "karma-safari-launcher": "0.1.1",
-    "karma-phantomjs-launcher": "~0.1.2",
+    "karma-phantomjs-launcher": "~0.1.4",
     "karma-html2js-preprocessor": "~0.1.0",
     "karma-script-launcher": "~0.1.0",
     "karma-requirejs": "~0.2.1",
-    "karma-jasmine": "0.2.2",
-    "karma-coffee-preprocessor": "~0.2.1",
-    "karma": "~0.12.0",
-    "bower": "~1.3.1",
-    "node-bourbon": "~1.0.0"
+    "karma-jasmine": "0.1.5",
+    "karma": "~0.12.14",
+    "bower": "~1.3.3",
+    "node-bourbon": "~1.2.2",
+    "body-parser": "~1.0.2",
+    "compression": "~1.0.2",
+    "errorhandler": "~1.0.1",
+    "morgan": "~1.0.0",
+    "method-override": "~1.0.0",
+    "protractor": "~0.22.0",
+    "selenium-webdriver": "~2.41.0"
   }
 }

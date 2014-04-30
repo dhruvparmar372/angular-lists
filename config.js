@@ -20,7 +20,10 @@ exports.config = {
 						case 'bower_components/modernizr/modernizr.js':
 
 						// jquery
-						case 'bower_components/jquery/jquery.js':
+						case 'bower_components/jquery/dist/jquery.js':
+
+						// lodash
+						case 'bower_components/lodash/dist/lodash.js':
 
 						// angular
 						case 'bower_components/angular/angular.js':
@@ -31,17 +34,6 @@ exports.config = {
 
 						// bootstrap
 						case 'bower_components/sass-boostrap3/dist/js/bootstrap.js':
-							return true;
-						default:
-							return false;
-					}
-				},
-				'js/deprecatedBrowsers.js': function(path) { // modernizr & respond
-					path = path.replace(/\\/g, '/');
-					switch(path) {
-						case 'bower_components/respond/respond.src.js':
-						case 'bower_components/console-polyfill/index.js':
-						case 'bower_components/es5-shim.js':
 							return true;
 						default:
 							return false;

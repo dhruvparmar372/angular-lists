@@ -69,7 +69,7 @@ module.exports = function(karma) {
 			'/': 'http://localhost:3333/'
 		},
 
-		urlRoot: '__karma',
+		urlRoot: '',
 
 		plugins: [
 			'karma-jasmine',
@@ -77,8 +77,7 @@ module.exports = function(karma) {
 			'karma-firefox-launcher',
 			'karma-safari-launcher',
 			'karma-phantomjs-launcher',
-			'karma-junit-reporter',
-			'karma-ng-scenario'
+			'karma-junit-reporter'
 		]
 	});
 };
