@@ -1,0 +1,10 @@
+ <div id="users-container">
+ 	Search: <input ng-model="searchText">
+    <ul id="users-list" class="noStyle">
+        <li class="user-entry" ng-animate="'animate'" ng-repeat="user in filteredUsers track by user.id">
+            {{user.name}}
+            dob: {{user.dob}}
+        </li> 
+    </ul>
+    <button ng-click="addUser()">Add User</button>
+</div>

@@ -1,0 +1,23 @@
+.noStyle	{	list-style: none !important;	}
+.noMargin	{	margin: 0px !important;			}
+.noPadding	{	padding: 0px !important;		}
+.full-width	{	width: 100%;					}
+
+.grouped-content:before,
+.grouped-content:after {
+	content:"";
+	display:table;
+}
+.grouped-content:after {
+	clear:both;
+}
+h1,h2,h3,h4,h5,h6{
+	margin: 0px !important;
+}
+
+html,body{
+	background: $background;
+	font-size: 18px;
+	color: $text-primary;
+	font-family: "Lato"; 
+}

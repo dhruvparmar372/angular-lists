@@ -15,6 +15,7 @@ exports.config = {
 			joinTo: {
 				'js/app.js': /^app/,
 				'js/vendor.js': function(path) {
+					if(path.indexOf("vendor/")==0){	return true; }
 					path = path.replace(/\\/g, '/');
 					switch(path) {
 						case 'bower_components/modernizr/modernizr.js':
@@ -53,7 +54,9 @@ exports.config = {
 					'bower_components/angular/angular.js',
 
 					// bootstrap
-					'bower_components/bootstrap/dist/js/bootstrap.js'
+					'bower_components/bootstrap/dist/js/bootstrap.js',
+					'vendor/Faker.min.js',
+					'vendor/moment.min.js'
 				]
 			}
 		},
