@@ -1,6 +1,12 @@
  <div id="users-container">
- 	Search: <input ng-model="searchText">
-    <ul id="users-list" class="noStyle">
+ 	<div id="filters" class="grouped-content">
+ 		<div id="search-box" class="input-wrapper">
+	 		<i class="fa fa-search icon-support"></i>
+	 		<input class="input-box" ng-model="searchText" placeholder="Search ...">
+ 		</div>
+ 		<select id="per-page-box" ng-model="resultsPerPage" ng-options="number for number in perPageResultsOptions"></select> results per page 
+ 	</div>
+    <ul id="users-list" class="noStyle noPadding">
         <li class="user-entry" ng-animate="'animate'" ng-repeat="user in filteredUsers track by user.id">
             {{user.name}}
             dob: {{user.dob}}

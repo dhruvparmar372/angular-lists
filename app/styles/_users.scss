@@ -1,3 +1,27 @@
+#users-container{
+  width: 90%;
+  margin-left: 5%;
+}
+
+#filters{ 
+  margin-bottom: 3%;
+}
+
+#per-page-box{
+  padding: 0.5rem 0.5rem;
+}
+
+#search-box{
+  float: left;
+  width: 60%;
+  margin-right: 1%;
+  .input-box{
+    width: 70%;
+    &:active,&:hover{ width: 100%; }
+  }
+}
+
+
 .animate-enter, 
 .animate-leave
 { 

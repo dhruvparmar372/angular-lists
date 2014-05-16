@@ -1,0 +1,14 @@
+html,body{
+	@extend .absolute-full-ht-wd;
+	background: $background;
+	font-size: 18px;
+	color: $text-primary;
+	font-family: "Lato"; 
+}
+
+#main-container{
+	@extend .absolute-full-ht-wd;
+	top: 1.3rem;
+	height: 80%;
+	margin: 2% 0;
+}

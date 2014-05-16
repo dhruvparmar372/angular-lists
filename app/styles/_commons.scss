@@ -1,3 +1,9 @@
+
+*{
+	//border-box \m/, give hassel free padding and margins !!
+	box-sizing: border-box;
+}
+
 .noStyle	{	list-style: none !important;	}
 .noMargin	{	margin: 0px !important;			}
 .noPadding	{	padding: 0px !important;		}
@@ -15,9 +21,37 @@ h1,h2,h3,h4,h5,h6{
 	margin: 0px !important;
 }
 
-html,body{
-	background: $background;
-	font-size: 18px;
-	color: $text-primary;
-	font-family: "Lato"; 
+.absolute-full-ht-wd{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	height: 100%;
+	width: 100%;
+}
+
+input,textarea,select{
+	//get rid of the old fashioned input styles once and for all !!
+	background: white;
+	outline: none;
+    border-radius: 0.2rem;
+    border: 1px solid darkgray;
+    transition: all 0.3s ease-in-out;
+    &:hover,&:active{
+	    border-color: $text-primary;
+    }
+}
+
+.input-wrapper{
+	position: relative;
+	.icon-support{
+		position: absolute;
+		top: 50%;
+		left: 0.5rem;
+		transform: translateY(-50%);	//vertical centering the icon in its container.
+		font-size: 1.5rem;
+	}
+	.input-box{
+		padding: 0.5rem 1rem;
+		padding-left: 2.5rem !important;
+	}
 }
