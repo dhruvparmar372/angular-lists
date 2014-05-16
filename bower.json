@@ -19,5 +19,8 @@
     "es5-shim": {
       "main": "es5-shim.js"
     }
+  },
+  "resolutions": {
+    "angular": "~1.2.14"
   }
 }
