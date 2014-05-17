@@ -1,18 +1,25 @@
  <div id="users-container">
  	<div id="filters" class="grouped-content">
- 		<div id="search-box" class="input-wrapper filter-item">
+ 		<div id="search-box" class="input-wrapper filter-item left-floater">
 	 		<i class="fa fa-search icon-support"></i>
 	 		<input class="input-box" ng-model="searchText" placeholder="Search ...">
- 		</div><!--
- 		--><div id="per-page-box" class="filter-item">
+ 		</div>
+ 		<div id="per-page-box" class="filter-item left-floater">
  		<select id="per-page-select" ng-model="resultsPerPage" ng-options="number for number in perPageResultsOptions"></select> results per page 
  		</div>
+ 		<a ui-sref="newUser" class="flat-button right-floater">Add User</a>
  	</div>
     <ul id="users-list" class="noStyle noPadding rowed-list">
-        <li class="user-entry grouped-content" ng-animate="'animate'" ng-repeat="user in pagedUsers track by user.id">
-            <div class="name-container left-floater">
-            {{user.name}}<span class="support-text">({{user.role}})</span></div>
-            <div class="status-container left-floater">{{user.status}}</div>
+        <li class="user-entry grouped-content animate-repeat" ng-animate="'animate'" ng-repeat="user in pagedUsers track by user.id">
+            <div class="details-container left-floater grouped-content">
+            	<img src="/images/icon4.png" class="user-icon left-floater">
+            	<div class="name-container left-floater">
+            		<strong>{{user.name}}</strong><span class="support-text"> ({{user.role}})</span>
+            		<div class="light-text">DOB - <strong>{{user.dob}}</strong></div>
+            		<div class="light-text">Registration Date - <strong>{{user.registration_date}}</strong></div>
+            	</div>
+            </div>
+        <div class="status-container left-floater ng-class:user.status">{{user.status}}</div>
             <div class="actions-container left-floater">
                 <i class="fa fa-edit"></i>
                 <i class="fa fa-trash-o"></i>

@@ -60,16 +60,9 @@ input,textarea,select{
 	}
 }
 
-.animate-repeat {
-  line-height:40px;
-  list-style:none;
-  box-sizing:border-box;
-}
- 
 .animate-repeat.ng-move,
 .animate-repeat.ng-enter,
 .animate-repeat.ng-leave {
-  -webkit-transition:all linear 0.5s;
   transition:all linear 0.5s;
 }
  
@@ -77,14 +70,12 @@ input,textarea,select{
 .animate-repeat.ng-move,
 .animate-repeat.ng-enter {
   opacity:0;
-  max-height:0;
 }
  
 .animate-repeat.ng-leave,
 .animate-repeat.ng-move.ng-move-active,
 .animate-repeat.ng-enter.ng-enter-active {
   opacity:1;
-  max-height:40px;
 }
 
 .hover-hand{
@@ -95,11 +86,37 @@ input,textarea,select{
 ul.horizontal-list{
 	@extend .grouped-content;
 	li{
-		float: left;
 		margin: 0 0.5rem;
+		@extend .left-floater;
 		&:first-of-type{margin-left: 0}
 		&:last-of-type{margin-right: 0}
 	}
 }
 
 .support-text{ font-size: 0.8em; }
+.light-text{ 
+	font-size: 0.7em;
+	color: $text-primary;
+	line-height: 110%;
+}
+
+
+a,a:hover,a:active{
+	text-decoration: none;
+	color: inherit;
+}
+
+.flat-button{
+    display: block;
+    outline: none;
+	background: $text-primary;
+	border-radius: 0.2rem;
+	padding: 0.5rem 1.5rem;
+	text-align: center;
+	color: $text-secondary;
+    transition: all 0.3s ease-in-out;
+    border: 0px;
+    &:hover{
+		color: $text-secondary;
+    }
+}

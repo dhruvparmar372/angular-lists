@@ -1,31 +1,25 @@
-#users-container{
-  width: 90%;
-  margin-left: 5%;
-}
-
 #filters{ 
   margin-bottom: 0.5rem;
-}
-
-
-.filter-item{
-  float: left;
-  transition: all 0.3s ease-in-out;
-}
-
-#per-page-select{ padding: 0.5rem 0.5rem;}
-#per-page-box{ width: 20%;}
-
-#search-box{
-  margin-right: 1%;
-  .input-box{
-    width: 70%;
-    &:active,&:hover{ width: 100%; }
+  font-size: 1.25rem;
+  .filter-item{ transition: all 0.3s ease-in-out; }
+  #search-box{
+    width: 40%;
+    margin-right: 1%;
+    .input-box{
+      width: 70%;
+      &:active,&:hover{ width: 100%; }
+    }
   }
+  #per-page-box{ width: 20%;}
+  #per-page-select{ padding: 0.5rem 0.5rem;}
 }
+
+
+
 
 #pagination-list{
-  text-align: center;
+  margin-left: 50%;
+  transform: translateX(-50%);
   li{
     @extend .hover-hand; 
     padding: 0.2rem 0.5rem;
@@ -37,27 +31,4 @@
   }
 }
 
-#users-list.rowed-list{
-  .user-entry{
-    padding: 0.5rem 1rem;
-    border-radius: 0.2rem;
-    &:nth-child(odd){  background: #e3e3e3;}
-    .name-container{
-      width: 50%;
-      position: relative;
-      font-size: 1.25rem;
-      padding: 0 0.5rem;
-    }
-    .status-container{
-        width: 15%;
-        margin: 0 5%;
-        padding: 0.2rem 0.5rem;
-        text-align: center;
-        background: $foreground-primary;
-        border-radius: 2px;
-    }
-    .actions-container{
-      width: 20%;
-    }
-  }
-}
+

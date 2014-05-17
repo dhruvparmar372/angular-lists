@@ -1,0 +1,33 @@
+#users-list.rowed-list{
+  .user-entry{
+    padding: 0.5rem 0;
+    border-radius: 0.2rem;
+    &:nth-child(odd){  background: #e3e3e3;}
+    .details-container{
+      width: 50%;
+      position: relative;
+      padding: 0 0.5rem;
+      .user-icon{ 
+        width: 64px;
+        margin-right: 0.5rem; 
+      }
+      .name-container{  font-size: 1.25rem; }
+    }
+    .status-container{
+        width: 15%;
+        margin: 0 5%;
+        padding: 0.2rem 0.5rem;
+        text-align: center;
+        border-radius: 2px;
+        color: $text-tertiary;
+    }
+    .Blocked  { background: $blocked;}
+    .Pending  { background: $pending;}
+    .Active  { background: $active;}
+    .Inactive  { background: $disabled;}
+    
+    .actions-container{
+      width: 20%;
+    }
+  }
+}

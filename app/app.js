@@ -26,7 +26,7 @@
 // 	
 // }]);
 
-var App = angular.module("app",['ui.router']).config(["$stateProvider","$locationProvider","$urlRouterProvider", function($stateProvider,$locationProvider,$urlRouterProvider){
+var App = angular.module("app",['ui.router',"ngAnimate"]).config(["$stateProvider","$locationProvider","$urlRouterProvider", function($stateProvider,$locationProvider,$urlRouterProvider){
 	$locationProvider.hashPrefix('!');
 	$urlRouterProvider.otherwise("/users");
 	$stateProvider.state('users',{
@@ -50,6 +50,11 @@ var App = angular.module("app",['ui.router']).config(["$stateProvider","$locatio
 				return store.readAll("user");
 			}
 		}
+	}).state("newUser",{
+		url:'/user-new',
+		templateUrl: "partials/new-user.html",
+		controller:"NewUserController",
+		enter:function(){console.log("entering into new user route !!")}
 	})
 	// Without server side support html5 must be disabled.
 	return $locationProvider.html5Mode(false);	

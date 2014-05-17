@@ -31,7 +31,7 @@ exports.config = {
 						case 'bower_components/angular-resource/angular-resource.js':
 						case 'bower_components/angular-sanitize/angular-sanitize.js':
 						case 'bower_components/angular-ui-router/release/angular-ui-router.js':
-						case 'bower_components/ocModal/ocModal.js':
+						case 'bower_components/angular-animate/angular-animate.js':
 
 						// bootstrap
 						case 'bower_components/sass-boostrap3/dist/js/bootstrap.js':
@@ -55,6 +55,9 @@ exports.config = {
 
 					// bootstrap
 					'bower_components/bootstrap/dist/js/bootstrap.js',
+
+					//angular animate
+					'bower_components/angular-animate/angular-animate.js',
 					'vendor/scripts/prefixfree.min.js',
 					'vendor/scripts/Faker.min.js',
 					'vendor/scripts/moment.min.js'
