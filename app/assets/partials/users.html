@@ -8,17 +8,21 @@
  		<select id="per-page-select" ng-model="resultsPerPage" ng-options="number for number in perPageResultsOptions"></select> results per page 
  		</div>
  	</div>
-    <ul id="users-list" class="noStyle noPadding">
-        <li class="user-entry" ng-animate="'animate'" ng-repeat="user in pagedUsers track by user.id">
-            {{user.name}}
-            dob: {{user.dob}}
+    <ul id="users-list" class="noStyle noPadding rowed-list">
+        <li class="user-entry grouped-content" ng-animate="'animate'" ng-repeat="user in pagedUsers track by user.id">
+            <div class="name-container left-floater">
+            {{user.name}}<span class="support-text">({{user.role}})</span></div>
+            <div class="status-container left-floater">{{user.status}}</div>
+            <div class="actions-container left-floater">
+                <i class="fa fa-edit"></i>
+                <i class="fa fa-trash-o"></i>
+                <i class="fa fa-file-text"></i>
+            </div>
         </li> 
     </ul>
-    <ul id="pagination-list" class="noStyle noPadding horizontal-list">
+    <ul id="pagination-list" class="noStyle noPadding horizontal-list grouped-content">
     	<li ng-repeat="object in pageObjects track by $index" ng-click="setCurrentPage(object.number)" ng-class="{'current-page': object.active }" >
     		{{object.title}}
     	</li>
     </ul>
-
-    <button ng-click="addUser()">Add User</button>
 </div>

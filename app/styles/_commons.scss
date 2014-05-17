@@ -17,6 +17,10 @@
 .grouped-content:after {
 	clear:both;
 }
+
+.left-floater{ float: left;}
+.right-floater{ float: right;}
+
 h1,h2,h3,h4,h5,h6{
 	margin: 0px !important;
 }
@@ -97,3 +101,5 @@ ul.horizontal-list{
 		&:last-of-type{margin-right: 0}
 	}
 }
+
+.support-text{ font-size: 0.8em; }

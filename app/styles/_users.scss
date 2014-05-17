@@ -4,7 +4,7 @@
 }
 
 #filters{ 
-  margin-bottom: 3%;
+  margin-bottom: 0.5rem;
 }
 
 
@@ -25,6 +25,7 @@
 }
 
 #pagination-list{
+  text-align: center;
   li{
     @extend .hover-hand; 
     padding: 0.2rem 0.5rem;
@@ -33,5 +34,30 @@
   }
   li.current-page{
     background: gray;
+  }
+}
+
+#users-list.rowed-list{
+  .user-entry{
+    padding: 0.5rem 1rem;
+    border-radius: 0.2rem;
+    &:nth-child(odd){  background: #e3e3e3;}
+    .name-container{
+      width: 50%;
+      position: relative;
+      font-size: 1.25rem;
+      padding: 0 0.5rem;
+    }
+    .status-container{
+        width: 15%;
+        margin: 0 5%;
+        padding: 0.2rem 0.5rem;
+        text-align: center;
+        background: $foreground-primary;
+        border-radius: 2px;
+    }
+    .actions-container{
+      width: 20%;
+    }
   }
 }
