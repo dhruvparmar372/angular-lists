@@ -1,16 +1,24 @@
  <div id="users-container">
  	<div id="filters" class="grouped-content">
- 		<div id="search-box" class="input-wrapper">
+ 		<div id="search-box" class="input-wrapper filter-item">
 	 		<i class="fa fa-search icon-support"></i>
 	 		<input class="input-box" ng-model="searchText" placeholder="Search ...">
+ 		</div><!--
+ 		--><div id="per-page-box" class="filter-item">
+ 		<select id="per-page-select" ng-model="resultsPerPage" ng-options="number for number in perPageResultsOptions"></select> results per page 
  		</div>
- 		<select id="per-page-box" ng-model="resultsPerPage" ng-options="number for number in perPageResultsOptions"></select> results per page 
  	</div>
     <ul id="users-list" class="noStyle noPadding">
-        <li class="user-entry" ng-animate="'animate'" ng-repeat="user in filteredUsers track by user.id">
+        <li class="user-entry" ng-animate="'animate'" ng-repeat="user in pagedUsers track by user.id">
             {{user.name}}
             dob: {{user.dob}}
         </li> 
     </ul>
+    <ul id="pagination-list" class="noStyle noPadding horizontal-list">
+    	<li ng-repeat="object in pageObjects track by $index" ng-click="setCurrentPage(object.number)" ng-class="{'current-page': object.active }" >
+    		{{object.title}}
+    	</li>
+    </ul>
+
     <button ng-click="addUser()">Add User</button>
 </div>
