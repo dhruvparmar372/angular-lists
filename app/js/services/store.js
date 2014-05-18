@@ -2,7 +2,6 @@ App.service("store",function(){
 	//Store will act as a mediator between the data provider and our application. Will implement basic
 	//CRUD operations here which will be exposed to our application as a service. 
 	this.initiateStore = function(){
-		console.log("initiate store");
 		if(localStorage.getItem("appStore") === null){
 			this.recordsContainer = {};
 			localStorage.setItem("appStore",JSON.stringify(this.recordsContainer));
@@ -10,7 +9,6 @@ App.service("store",function(){
 		else{
 			this.loadStore();
 		}
-		console.log("initiate store finished");
 	}
 
 	this.fetchStore = function(){
