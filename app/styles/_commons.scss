@@ -120,3 +120,34 @@ a,a:hover,a:active{
 		color: $text-secondary;
     }
 }
+
+
+.list{
+	padding: 2%;
+	background: white;
+	border-radius: 2px;
+	.list-entry{
+		margin-bottom: 0.5rem;
+		padding: 0 0 0.5rem 0;
+		border-bottom: 1px solid $text-secondary;
+		font-size: 1.5rem;
+		&:last-of-type{
+			margin-bottom: 0px;
+			border-bottom: 0px;
+		}
+		.list-label{
+			width: 40%;
+			text-align: right;
+			color: $disabled;
+		}
+		.list-value{
+			width: 60%;
+			padding-left: 5%;
+			.status-container{
+				width: 50%;
+				margin: 0;
+				padding: 0;
+			}
+		}
+	}
+}

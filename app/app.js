@@ -54,7 +54,24 @@ var App = angular.module("app",['ui.router',"ngAnimate"]).config(["$stateProvide
 		url:'/user-new',
 		templateUrl: "partials/new-user.html",
 		controller:"NewUserController",
-		enter:function(){console.log("entering into new user route !!")}
+	}).state("showUser",{
+		url:'/user/:id',
+		controller:"UserController",
+		templateUrl:'partials/user-show.html',
+		resolve:{
+			user:function($stateParams,store){
+				return store.read("user",$stateParams.id)
+			}
+		}
+	}).state("editUser",{
+		url:'/edit/:id',
+		controller:"EditUserController",
+		templateUrl:'partials/new-user.html',
+		resolve:{
+			user:function($stateParams,store){
+				return store.read("user",$stateParams.id)
+			}
+		}
 	})
 	// Without server side support html5 must be disabled.
 	return $locationProvider.html5Mode(false);	

@@ -1,0 +1,9 @@
+#user-container{
+	padding: 0 10%;
+	.flat-button{
+		font-size: 1.2rem;
+		width: 49.5%;
+		margin-top: 1%;
+		&:first-of-type{margin-right: 1%;}
+	}
+}

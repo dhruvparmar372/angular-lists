@@ -10,7 +10,7 @@
  		<a ui-sref="newUser" class="flat-button right-floater">Add User</a>
  	</div>
     <ul id="users-list" class="noStyle noPadding rowed-list">
-        <li class="user-entry grouped-content animate-repeat" ng-animate="'animate'" ng-repeat="user in pagedUsers track by user.id">
+        <li ui-sref="showUser({id:user.id})" class="user-entry grouped-content animate-repeat hover-hand" ng-animate="'animate'" ng-repeat="user in pagedUsers track by user.id">
             <div class="details-container left-floater grouped-content">
             	<img src="/images/icon4.png" class="user-icon left-floater">
             	<div class="name-container left-floater">
@@ -21,7 +21,7 @@
             </div>
         <div class="status-container left-floater ng-class:user.status">{{user.status}}</div>
             <div class="actions-container left-floater">
-                <i class="fa fa-edit"></i>
+                <a ui-sref="editUser({id:user.id})"><i class="fa fa-edit"></i></a>
                 <i class="fa fa-trash-o"></i>
                 <i class="fa fa-file-text"></i>
             </div>

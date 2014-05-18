@@ -13,7 +13,14 @@
       }
       .name-container{  font-size: 1.25rem; }
     }
-    .status-container{
+    
+    .actions-container{
+      width: 20%;
+    }
+  }
+}
+
+.status-container{
         width: 15%;
         margin: 0 5%;
         padding: 0.2rem 0.5rem;
@@ -21,13 +28,7 @@
         border-radius: 2px;
         color: $text-tertiary;
     }
-    .Blocked  { background: $blocked;}
-    .Pending  { background: $pending;}
-    .Active  { background: $active;}
-    .Inactive  { background: $disabled;}
-    
-    .actions-container{
-      width: 20%;
-    }
-  }
-}
+.Blocked  { background: $blocked;}
+.Pending  { background: $pending;}
+.Active  { background: $active;}
+.Inactive  { background: $disabled;}

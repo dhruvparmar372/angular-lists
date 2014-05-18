@@ -1,0 +1,33 @@
+#user-form{
+	.list-entry{
+		@extend .grouped-content;
+		margin-bottom: 1rem;
+	}
+	.list-value{
+		position: relative;
+		padding-bottom: 1rem;
+		input,select{
+			padding: 0.2rem 0.5rem;
+			min-width: 50%;
+			transition: all 0.3s ease-in-out;
+		}
+		.error-message{
+			position: absolute;
+			bottom: 0px;
+			font-size: 0.7rem;
+			transition: all 0.3s ease-in-out;
+			transform: translateY(-3rem);
+			opacity: 0;
+			&.show-me{
+				opacity: 1;
+				transform: translateY(0);
+			}
+		}
+		input.ng-dirty.ng-invalid{ border: 1px solid $blocked;}
+		input.ng-dirty.ng-valid{ border: 1px solid $active;}
+	}
+	
+	button[disabled]{
+		background: $disabled !important;
+	}
+}
