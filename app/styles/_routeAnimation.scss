@@ -1,0 +1,21 @@
+.page.ng-enter{	z-index: 8888; }
+.page.ng-leave{	z-index: 9999; }
+
+.page.ng-enter,.page.ng-leave{
+    transition:all 0.5s ease-in-out;
+ }
+
+.user-list.ng-enter.ng-enter-active {	@extend .in-view;	}
+.user-list.ng-enter { 	@extend .out-left; 	}
+
+.user-list.ng-leave.ng-leave-active {	@extend .out-left;	}
+.user-list.ng-leave {	@extend .in-view;	}
+
+
+
+.new-user.ng-enter.ng-enter-active,.edit-user.ng-enter.ng-enter-active,.show-user.ng-enter.ng-enter-active {	@extend .in-view;	}
+.new-user.ng-enter,.show-user.ng-enter,.edit-user.ng-enter {	@extend .out-right;	}
+
+.new-user.ng-leave.ng-leave-active,.show-user.ng-leave.ng-leave-active,.edit-user.ng-leave.ng-leave-active {  	@extend .out-right;	}
+.new-user.ng-leave,.show-user.ng-leave,.edit-user.ng-leave {	@extend .in-view;	}
+

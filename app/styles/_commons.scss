@@ -60,23 +60,21 @@ input,textarea,select{
 	}
 }
 
-.animate-repeat.ng-move,
-.animate-repeat.ng-enter,
-.animate-repeat.ng-leave {
-  transition:all ease-in-out 0.3s;
+.in-view{
+	opacity: 1;
+	transform: translateX(0);
 }
- 
-.animate-repeat.ng-leave.ng-leave-active,
-.animate-repeat.ng-move,
-.animate-repeat.ng-enter {
-  opacity:0;
+
+.out-left{
+	opacity: 0;
+	transform: translateX(-100%);
 }
- 
-.animate-repeat.ng-leave,
-.animate-repeat.ng-move.ng-move-active,
-.animate-repeat.ng-enter.ng-enter-active {
-  opacity:1;
+
+.out-right{
+	opacity: 0;
+	transform: translateX(100%);	
 }
+
 
 .hover-hand{
 	cursor: pointer;

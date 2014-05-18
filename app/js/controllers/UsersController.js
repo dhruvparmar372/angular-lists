@@ -1,4 +1,5 @@
 App.controller("UsersController",["store","generator","constants","paginator","search","$scope","users",function(store,generator,constants,paginator,search,$scope,users){
+	$scope.pageClass = "user-list";
 	var totalUsers = users;
 	$scope.filteredUsers = users;
 

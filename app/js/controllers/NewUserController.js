@@ -1,12 +1,12 @@
-App.controller("NewUserController",["store","generator","constants","$scope",function(store,generator,constants,$scope){
+App.controller("NewUserController",["$state","store","generator","constants","$scope",function($state,store,generator,constants,$scope){
+	$scope.pageClass = "new-user";
 	$scope.submitForm = function(isValid){
 		if(isValid){
 			var user = $scope.user;
 			user.photo = "icon"+Math.floor(Math.random()*12+1).toString();
 			store.create("user",user);
 			//setting the form inputs back to pristine state so that form state is completely reset.
-			$scope.userForm.$setPristine();
-			$scope.resetForm();
+			$state.go("showUser",{id:user.id})
 		}
 	}
 	$scope.resetForm = function(){

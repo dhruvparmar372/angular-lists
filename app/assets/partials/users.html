@@ -10,7 +10,7 @@
  		</div>
  	</div>
     <ul id="users-list" class="noStyle noPadding rowed-list">
-        <li class="user-entry grouped-content animate-repeat hover-hand" ng-animate="'animate'" ng-repeat="user in pagedUsers track by user.id">
+        <li class="user-entry grouped-content hover-hand" ng-repeat="user in pagedUsers track by user.id">
             <div ui-sref="showUser({id:user.id})" class="details-container left-floater grouped-content">
             	<img ng-src="/images/{{user.photo}}.png" class="user-icon left-floater">
             	<div class="name-container left-floater">

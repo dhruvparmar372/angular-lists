@@ -1,4 +1,5 @@
 App.controller("EditUserController",["$state","store","constants","$scope","user",function($state,store,constants,$scope,resolvedUser){
+	$scope.pageClass = "edit-user";
 	$scope.submitForm = function(isValid){
 		if(isValid){
 			var user = $scope.user;

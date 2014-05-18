@@ -1,5 +1,6 @@
 #users-list.rowed-list{
   .user-entry{
+    transition: all 0.3s ease-in-out;
     padding: 0.5rem 0;
     border-radius: 0.2rem;
     &:nth-child(odd){  background: #e3e3e3;}
@@ -29,6 +30,12 @@
     }
   }
 }
+
+.user-entry.ng-enter.ng-enter-active { @extend .in-view; }
+.user-entry.ng-enter {   @extend .out-left;  }
+
+.user-entry.ng-leave.ng-leave-active { @extend .out-left;  }
+.user-entry.ng-leave { @extend .in-view; }
 
 .status-container{
     text-align: center;
