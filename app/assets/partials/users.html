@@ -10,9 +10,9 @@
  		<a ui-sref="newUser" class="flat-button right-floater">Add User</a>
  	</div>
     <ul id="users-list" class="noStyle noPadding rowed-list">
-        <li ui-sref="showUser({id:user.id})" class="user-entry grouped-content animate-repeat hover-hand" ng-animate="'animate'" ng-repeat="user in pagedUsers track by user.id">
-            <div class="details-container left-floater grouped-content">
-            	<img src="/images/icon4.png" class="user-icon left-floater">
+        <li class="user-entry grouped-content animate-repeat hover-hand" ng-animate="'animate'" ng-repeat="user in pagedUsers track by user.id">
+            <div ui-sref="showUser({id:user.id})" class="details-container left-floater grouped-content">
+            	<img ng-src="/images/{{user.photo}}.png" class="user-icon left-floater">
             	<div class="name-container left-floater">
             		<strong>{{user.name}}</strong><span class="support-text"> ({{user.role}})</span>
             		<div class="light-text">DOB - <strong>{{user.dob}}</strong></div>
@@ -21,9 +21,14 @@
             </div>
         <div class="status-container left-floater ng-class:user.status">{{user.status}}</div>
             <div class="actions-container left-floater">
-                <a ui-sref="editUser({id:user.id})"><i class="fa fa-edit"></i></a>
-                <i class="fa fa-trash-o"></i>
-                <i class="fa fa-file-text"></i>
+                <span ui-sref="editUser({id:user.id})" class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-edit fa-stack-1x fa-inverse"></i>
+                </span>
+                <span ng-click="deleteUser(user)" class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>
+                </span>                
             </div>
         </li> 
     </ul>

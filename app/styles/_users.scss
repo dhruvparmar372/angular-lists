@@ -18,8 +18,7 @@
 
 
 #pagination-list{
-  margin-left: 50%;
-  transform: translateX(-50%);
+  float: right;
   li{
     @extend .hover-hand; 
     padding: 0.2rem 0.5rem;

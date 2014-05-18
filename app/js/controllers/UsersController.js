@@ -1,10 +1,12 @@
 App.controller("UsersController",["store","generator","constants","paginator","$scope","users",function(store,generator,constants,paginator,$scope,users){
 	var totalUsers = users;
 	$scope.filteredUsers = users;
-	$scope.addUser = function(){
-		store.create("user",generator.generateFakeUser());
-		totalUsers = store.readAll("user");
-		$scope.setCurrentPage(1);
+
+	$scope.deleteUser = function(user){
+		store.deleteRecord("user",user.id);
+		$scope.filteredUsers = store.readAll("user")
+		$scope.setCurrentPage($scope.currentPage);
+		console.log()		
 	}
 
 	//Watch the searchText value and perform search. Currently a simple text based
@@ -29,6 +31,12 @@ App.controller("UsersController",["store","generator","constants","paginator","$
     $scope.setCurrentPage = function(number){
 	    $scope.pageObjects = paginator.generatePageObjects($scope.resultsPerPage,$scope.filteredUsers.length,number,$scope.$pagesToShow)
     	$scope.pagedUsers = paginator.filterResults(number,$scope.filteredUsers,$scope.resultsPerPage)
+    	$scope.currentPage = number;
+    	//call current page recursively till our paged users have a certain length.
+    	//takes care of the conditions when we delete first entry from a page. 
+    	if($scope.pagedUsers.length == 0){
+    		$scope.setCurrentPage(--number);
+    	}
     }
     $scope.setCurrentPage(1);
     $scope.$watch('resultsPerPage',function(){

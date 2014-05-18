@@ -16,6 +16,11 @@
     
     .actions-container{
       width: 20%;
+      padding: 0 1rem;
+      span.fa-stack{ 
+        float: right;
+        margin: 0 0.2rem; 
+      }
     }
   }
 }
