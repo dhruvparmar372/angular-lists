@@ -2,6 +2,7 @@ App.controller("NewUserController",["store","generator","constants","$scope",fun
 	$scope.submitForm = function(isValid){
 		if(isValid){
 			var user = $scope.user;
+			user.photo = "icon"+Math.floor(Math.random()*12+1).toString();
 			store.create("user",user);
 			//setting the form inputs back to pristine state so that form state is completely reset.
 			$scope.userForm.$setPristine();

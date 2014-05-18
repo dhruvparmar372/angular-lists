@@ -1,13 +1,13 @@
  <div id="users-container">
  	<div id="filters" class="grouped-content">
+        <a id='add-user-button' ui-sref="newUser" class="flat-button left-floater">Add User</a>
  		<div id="search-box" class="input-wrapper filter-item left-floater">
 	 		<i class="fa fa-search icon-support"></i>
 	 		<input class="input-box" ng-model="searchText" placeholder="Search ...">
  		</div>
- 		<div id="per-page-box" class="filter-item left-floater">
- 		<select id="per-page-select" ng-model="resultsPerPage" ng-options="number for number in perPageResultsOptions"></select> results per page 
+ 		<div id="per-page-box" class="filter-item right-floater">
+ 		<select id="per-page-select" ng-model="resultsPerPage" ng-options="number for number in perPageResultsOptions"></select> results/page 
  		</div>
- 		<a ui-sref="newUser" class="flat-button right-floater">Add User</a>
  	</div>
     <ul id="users-list" class="noStyle noPadding rowed-list">
         <li class="user-entry grouped-content animate-repeat hover-hand" ng-animate="'animate'" ng-repeat="user in pagedUsers track by user.id">
@@ -32,6 +32,7 @@
             </div>
         </li> 
     </ul>
+    <div class="pagination-meta">{{metaString}}</div>
     <ul id="pagination-list" class="noStyle noPadding horizontal-list grouped-content">
     	<li ng-repeat="object in pageObjects track by $index" ng-click="setCurrentPage(object.number)" ng-class="{'current-page': object.active }" >
     		{{object.title}}

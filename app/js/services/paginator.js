@@ -69,6 +69,22 @@ App.service("paginator",[function(){
 		//filter the items on the basis of the current page value and the total number
 		//of pages.
 		if(currentPage<1){	return []; }
-		return items.slice((currentPage-1)*pageCount,currentPage*pageCount)
+		var startIndex = (currentPage-1)*pageCount;
+		var endIndex = (currentPage)*pageCount;
+		return items.slice(startIndex,endIndex);
+	}
+	this.getFilterMetaString = function(currentPage,items,pageCount){
+		if(items.length == 0){return "";}
+		var firstRes = ((currentPage-1)*pageCount)+1;
+		var lastRes = (currentPage)*pageCount;
+		if(lastRes<=items.length){
+			var metaString = "Showing "+firstRes+" - "+lastRes+" of "+items.length+" results.";
+		}else{
+			var metaString = "Showing "+firstRes+" - "+items.length+" of "+items.length+" results.";
+		}
+		if(items.length==1){
+			var metaString = "Showing 1 of 1 result.";
+		}
+		return metaString;
 	}
 }])

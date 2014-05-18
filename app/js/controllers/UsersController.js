@@ -31,6 +31,7 @@ App.controller("UsersController",["store","generator","constants","paginator","$
     $scope.setCurrentPage = function(number){
 	    $scope.pageObjects = paginator.generatePageObjects($scope.resultsPerPage,$scope.filteredUsers.length,number,$scope.$pagesToShow)
     	$scope.pagedUsers = paginator.filterResults(number,$scope.filteredUsers,$scope.resultsPerPage)
+    	$scope.metaString = paginator.getFilterMetaString(number,$scope.filteredUsers,$scope.resultsPerPage);
     	$scope.currentPage = number;
     	//call current page recursively till our paged users have a certain length.
     	//takes care of the conditions when we delete first entry from a page. 

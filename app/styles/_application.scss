@@ -1,7 +1,7 @@
 html,body{
 	@extend .absolute-full-ht-wd;
 	background: $background;
-	font-size: 18px;
+	@include property-responsive("font-size",12px,14px,14px,16px,18px);
 	color: $text-primary;
 	font-family: "Lato"; 
 }

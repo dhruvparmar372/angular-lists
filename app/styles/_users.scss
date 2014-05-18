@@ -1,17 +1,25 @@
 #filters{ 
   margin-bottom: 0.5rem;
   font-size: 1.25rem;
+  #add-user-button{
+    @include property-responsive(width,100%,100%,20%,20%,20%);
+    @include property-responsive(margin,0.5rem 0,0.5rem 0,0 1% 0 0,0 1% 0 0,0 1% 0 0);
+
+  }
   .filter-item{ transition: all 0.3s ease-in-out; }
   #search-box{
-    width: 40%;
+    @include property-responsive(width,60%,60%,50%,40%,40%);
     margin-right: 1%;
     .input-box{
       width: 70%;
       &:active,&:hover{ width: 100%; }
     }
   }
-  #per-page-box{ width: 20%;}
-  #per-page-select{ padding: 0.5rem 0.5rem;}
+  #per-page-box{ 
+    @include property-responsive(width,39%,39%,28%,38%,38%);
+    text-align: right;
+  }
+  #per-page-select{ padding: 0.5rem;}
 }
 
 
@@ -28,12 +36,5 @@
   li.current-page{
     background: gray;
   }
-}
-
-
-#user-list-link{
-  display: block;
-  margin: 1rem 0;
-  font-size: 1.1rem;
 }
 

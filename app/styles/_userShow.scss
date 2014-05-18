@@ -1,9 +1,12 @@
 #user-container{
-	padding: 0 10%;
+	@include property-responsive(padding,0 1%,0 1%,0 2%,0 5%,0 10%);
 	.flat-button{
 		font-size: 1.2rem;
 		width: 49.5%;
 		margin-top: 1%;
 		&:first-of-type{margin-right: 1%;}
+	}
+	#user-image{
+        @include property-responsive(width,90px,100px,110px,120px,128px);
 	}
 }

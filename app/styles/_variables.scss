@@ -10,3 +10,13 @@ $disabled: #abb7b7;
 $pending: #f9bf3b;
 $blocked: #ef4836;
 $text-tertiary: #f2f1ef;
+
+//Variables for media query sizing
+$small-max-width:400px;
+$medium-min-width:401px;
+$medium-max-width:560px;
+$large-min-width:561px;
+$large-max-width:800px;
+$xlarge-min-width:801px;
+$xlarge-max-width:1024px;
+$xxlarge-min-width:1025px;

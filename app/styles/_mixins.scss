@@ -1,0 +1,7 @@
+@mixin property-responsive($property,$small,$medium,$large,$xlarge,$xxlarge:""){
+  @media (max-width:$small-max-width){ #{$property}: $small; }
+  @media (min-width:$medium-min-width) and (max-width:$medium-max-width){ #{$property}: $medium; }
+  @media (min-width:$large-min-width) and (max-width:$large-max-width){ #{$property}: $large; }
+  @media (min-width:$xlarge-min-width) and (max-width:$xlarge-max-width) { #{$property}: $xlarge; }
+  @media (min-width:$xxlarge-min-width) { #{$property}: $xxlarge; }
+}
