@@ -1,7 +1,8 @@
 App.service("paginator",[function(){
 	this.appendPrevNext = true;
-	this.getStartEndPage = function(pageNumbers,currentPage,pagesToShow){
+	var getStartEndPage = function(pageNumbers,currentPage,pagesToShow){
     	//This method will return an object with start and end page values.
+    	//Doesnt need to be exposed to other modules.
 		var pagesObj = {startPage:0,endPage:0}
 		var floorVal = Math.floor(pagesToShow/2);
 		if((currentPage-floorVal)< 1){
@@ -32,8 +33,8 @@ App.service("paginator",[function(){
 	this.generatePageObjects = function(pageCount,itemCount,currentPage,pagesToShow){
    		var pageNumbers = Math.ceil(itemCount/pageCount);
     	var pagesToShow = pagesToShow || pageNumbers;
-    	var startPage = this.getStartEndPage(pageNumbers,currentPage,pagesToShow).startPage;
-    	var endPage = this.getStartEndPage(pageNumbers,currentPage,pagesToShow).endPage;
+    	var startPage = getStartEndPage(pageNumbers,currentPage,pagesToShow).startPage;
+    	var endPage = getStartEndPage(pageNumbers,currentPage,pagesToShow).endPage;
     	var i=startPage;
     	var pageObjects = [];
     	while(i<=endPage){
