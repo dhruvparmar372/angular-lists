@@ -5,8 +5,8 @@
 
 App.factory("constants",function(){
 	return {
-		fakeUserCount: 5,
-		maxUsers: 10, //maximum number of users that will be generated.
+		fakeUserCount: 20,
+		maxUsers: 20, //maximum number of users that will be generated.
 		availableRoles:["Admin","Staff","Manager","Member"],
 		possibleStatus:["Active","Inactive","Blocked","Pending"]
 	}
