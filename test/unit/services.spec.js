@@ -151,7 +151,6 @@ describe('Store Service Test', function(){
     it("should return lastRecordsId when asked for a type",inject(function(store){
     	localStorage.clear();
     	store.initiateStore();
-    	expect(store.lastRecordId("user")).toEqual(0);
     	store.create("user",{name:"Dhruv",dob:"22/07/1991",status:"Admin"});    	
     	store.create("user",{name:"Parmar",dob:"22/07/1991",status:"Manager"});
     	expect(store.lastRecordId("user")).toEqual(2);
@@ -160,3 +159,92 @@ describe('Store Service Test', function(){
     }))
 
 });
+
+
+describe('Paginator Service Test', function(){
+    beforeEach(module('app'))
+
+    it('has all functions',inject(function(paginator){ 
+        expect( paginator.generatePageObjects ).toBeDefined();
+        expect( paginator.filterResults ).toBeDefined();
+        expect( paginator.getFilterMetaString ).toBeDefined();
+    }))
+
+    it("has prev next button appending set to true by default",inject(function(paginator){
+    	expect( paginator.appendPrevNext ).toBe(true);
+    }))
+
+    it("should return proper pagination objects for first page",inject(function(paginator){
+    	var pageObjects = paginator.generatePageObjects(5,20,1,3)
+    	expect(pageObjects.length).toEqual(4)
+    	expect(pageObjects[0].title).not.toEqual("Previous")
+    	expect(pageObjects[0].title).toEqual(1)
+    	expect(pageObjects[0].active).toEqual(true)
+    	expect(pageObjects[3].title).toEqual("Next")
+    }))
+
+    it("should return proper pagination objects for middle page",inject(function(paginator){
+    	var pageObjects = paginator.generatePageObjects(5,20,2,3)
+    	expect(pageObjects.length).toEqual(5)
+    	expect(pageObjects[0].title).toEqual("Previous")
+    	expect(pageObjects[2].active).toEqual(true)
+    	expect(pageObjects[4].title).toEqual("Next")
+    }))
+});
+
+
+describe('Search Service Test', function(){
+    beforeEach(module('app'))
+    it("should have all functions",inject(function(search){
+    	expect(search.setKeyPropertyMap).toBeDefined();
+    	expect(search.performSearch).toBeDefined();
+    }))
+
+    it("should set key setKeyPropertyMap properly",inject(function(search){
+	    search.setKeyPropertyMap({
+			role:"Role",
+			name:"Name",
+			status:"Status",
+			dob:"DOB"
+		},"name");
+		expect(search.defaultProperty).toEqual("name");
+		expect(search.keyPropertyMap).toEqual({
+			role:"Role",
+			name:"Name",
+			status:"Status",
+			dob:"DOB"
+		});
+    }))
+
+    it("should set key setKeyPropertyMap properly",inject(function(search){
+	    search.setKeyPropertyMap({
+			role:"Role",
+			name:"Name",
+			status:"Status",
+			dob:"DOB"
+		},"name");
+		var records = [
+		{role:"Admin",name:"Dhruv",status:"Blocked"},
+		{role:"Manager",name:"Parmar",status:"Active"},
+		{role:"Staff",name:"Jesse",status:"Inactive"},
+		{role:"Admin",name:"Wayne",status:"Active"},
+		]
+
+		//simple text search
+		var resultsOne = search.performSearch(records,"Dhruv")
+		expect(resultsOne.length).toEqual(1);
+		
+		//tag based search
+		var resultsTwo = search.performSearch(records,"Role:Admin")
+		expect(resultsTwo.length).toEqual(2);
+		expect(resultsTwo[0].name).toEqual("Dhruv");
+
+		var resultsThree = search.performSearch(records,"Status:Active")
+		expect(resultsThree.length).toEqual(2);
+		expect(resultsThree[0].name).toEqual("Parmar");
+		expect(resultsThree[1].name).toEqual("Wayne");
+
+    }))
+
+
+})

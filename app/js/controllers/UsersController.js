@@ -15,25 +15,10 @@ App.controller("UsersController",["store","generator","constants","paginator","s
 		status:"Status",
 		dob:"DOB"
 	},"name");
-	// console.log(search.giveTypeAndString("Role:Admin"));
-	// console.log(search.giveTypeAndString("Name:Admin"));
-	// console.log(search.giveTypeAndString("Admin"));
-	// console.log(search.giveTypeAndString("Dhruv"));
-	// console.log(search.giveTypeAndString(":Dhruv"));
-	// console.log(search.giveTypeAndString("Dhruv:"));
-	// console.log(search.giveTypeAndString("Status:Dhruv"));
+
 	//Watch the searchText value and perform search. Currently a simple text based
 	//filtering of the results. 
 	$scope.$watch('searchText',function(value){
-		// if((value != undefined) && (value != "")){
-		// 	$scope.filteredUsers = totalUsers.filter(function(user){
-  //       		return user.name.toLowerCase().indexOf(value.toLowerCase()) != -1;
-  //       	})
-		// }
-		// else{
-		// 	//set to original results when search box is empty.
-		// 	$scope.filteredUsers = totalUsers;
-		// }
 		$scope.filteredUsers = search.performSearch(totalUsers,value);
 		$scope.setCurrentPage(1);
     });

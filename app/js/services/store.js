@@ -25,14 +25,20 @@ App.service("store",function(){
 	this.lastRecordId = function(type){
 		var store = this.fetchStore();
 		var records = store[type];
-		return records.reduce(function(prevRecord,curRecord){
-			if(prevRecord.id > curRecord.id){
-				return prevRecord;
-			}
-			else{
-				return curRecord;
-			}
-		}).id
+		if(records.reduce){
+			return records.reduce(function(prevRecord,curRecord){
+				if(prevRecord.id > curRecord.id){
+					return prevRecord;
+				}
+				else{
+					return curRecord;
+				}
+			}).id
+		}
+		else{
+			return 0;
+		}
+		
 	}
 
 	this.create = function(type,record){
