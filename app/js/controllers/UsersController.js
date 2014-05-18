@@ -2,7 +2,6 @@ App.controller("UsersController",["store","generator","constants","paginator","s
 	$scope.pageClass = "user-list";
 	var totalUsers = users;
 	$scope.filteredUsers = users;
-
 	$scope.deleteUser = function(user){
 		store.deleteRecord("user",user.id);
 		$scope.filteredUsers = store.readAll("user")

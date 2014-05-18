@@ -1,31 +1,5 @@
 'use strict';
 
-// Declare app level module which depends on filters, and services
-// var App = angular.module('app', ['ngSanitize', 'ngResource', 'ui.router']).config(['$stateProvider', '$locationProvider', '$urlRouterProvider', function($stateProvider, $locationProvider, $urlRouterProvider) {
-// 	$locationProvider.hashPrefix('!');
-// 	$urlRouterProvider.otherwise("/users");
-
-// 	$stateProvider.state('todo', {
-// 		url: "/todo", // root route
-// 		views: {
-// 			"mainView": {
-// 				templateUrl: "partials/todo.html",
-// 				controller: 'TodoCtrl'
-// 			}
-// 		}
-// 	}).state('view', {
-// 		url: "/view",
-// 		views: {
-// 			"mainView": {
-// 				templateUrl: "partials/partial.html",
-// 				controller: 'MyCtrl'
-// 			}
-// 		}
-// 	});
-
-// 	
-// }]);
-
 var App = angular.module("app",['ui.router',"ngAnimate"]).config(["$stateProvider","$locationProvider","$urlRouterProvider", function($stateProvider,$locationProvider,$urlRouterProvider){
 	$locationProvider.hashPrefix('!');
 	$urlRouterProvider.otherwise("/users");
@@ -40,6 +14,7 @@ var App = angular.module("app",['ui.router',"ngAnimate"]).config(["$stateProvide
 				var users = store.readAll("user"); 
 				if(users.length < constants.maxUsers){
 					//Generate Fake Users
+					console.log("generating fake stuff");
 					var i = constants.fakeUserCount;
 					while(i>0){
 						var user = generator.generateFakeUser();
