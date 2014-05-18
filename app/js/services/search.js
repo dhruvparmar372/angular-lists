@@ -60,7 +60,11 @@ App.service("search",[function(){
 			return items.filter(function(item){
 				var propVal = item[searchObj['key']];
 				var stringVal = searchObj['search'];
-				return propVal.toLowerCase().indexOf(stringVal.toLowerCase()) == 0
+				if(propVal.toLowerCase().indexOf(stringVal.toLowerCase())>0){
+					//fix for getting surnames in search results.
+					return propVal[(propVal.toLowerCase().indexOf(stringVal.toLowerCase()))-1] == " ";
+				}
+				return propVal.toLowerCase().indexOf(stringVal.toLowerCase()) == 0 
 			})
 		}
 	}
