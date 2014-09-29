@@ -1,0 +1,32 @@
+<div id="user-container">
+    <div class='list'>
+        <div class='list-entry grouped-content'>
+            <div class='list-label left-floater'>Name</div>
+            <div class='list-value left-floater'>{{user.name}}</div>
+        </div>
+        <div class='list-entry grouped-content'>
+            <div class='list-label left-floater'>Photo</div>
+            <div class='list-value left-floater'><img id="user-image" ng-src="images/{{user.photo}}.png"></div>
+        </div>
+        <div class='list-entry grouped-content'>
+            <div class='list-label left-floater'>Date of Birth</div>
+            <div class='list-value left-floater'>{{user.dob}}</div>
+        </div>
+        <div class='list-entry grouped-content'>
+            <div class='list-label left-floater'>Registration Date</div>
+            <div class='list-value left-floater'>{{user.registration_date}}</div>
+        </div>
+        <div class='list-entry grouped-content'>
+            <div class='list-label left-floater'>Role</div>
+            <div class='list-value left-floater'>{{user.role}}</div>
+        </div>
+        <div class='list-entry grouped-content'>
+            <div class='list-label left-floater'>Status</div>
+            <div class='list-value left-floater'><div class="status-container ng-class:user.status">{{user.status}}</div></div>
+        </div>
+    </div>
+    <a ui-sref="users" id="user-list-link" class="flat-button left-floater">Back to Users List</a>   
+    <a ui-sref="editUser({id:user.id})" class="flat-button left-floater">Edit</a>
+</div>
+
+
