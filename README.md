@@ -2,6 +2,8 @@
 
 [AngularJS](http://angularjs.org) + [Brunch](http://brunch.io)
 
+Demo - http://dhruvparmar372.github.io/angular-lists
+
 Features:
 * Maintain user lists for any organization.
 * Search for users.
